@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		624938BC1B03DD86000C898E /* PlayerIconScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624938BB1B03DD86000C898E /* PlayerIconScene.swift */; };
+		624938BE1B03E9D7000C898E /* earth.png in Resources */ = {isa = PBXBuildFile; fileRef = 624938BD1B03E9D7000C898E /* earth.png */; };
+		626ABD571B06BAAB00C55521 /* BlackHoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626ABD561B06BAAB00C55521 /* BlackHoleScene.swift */; };
+		626ABD591B06BBE800C55521 /* SunIconScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626ABD581B06BBE800C55521 /* SunIconScene.swift */; };
+		626ABD5B1B06BE1700C55521 /* PlanetIconScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626ABD5A1B06BE1700C55521 /* PlanetIconScene.swift */; };
+		626ABD5D1B06BF5000C55521 /* WormHoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626ABD5C1B06BF5000C55521 /* WormHoleScene.swift */; };
+		626ABD5F1B06BFFA00C55521 /* AlienScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626ABD5E1B06BFFA00C55521 /* AlienScene.swift */; };
 		62D259361B0138DF00309A27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D259351B0138DF00309A27 /* AppDelegate.swift */; };
 		62D2593A1B0138DF00309A27 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D259391B0138DF00309A27 /* GameScene.swift */; };
 		62D2593C1B0138DF00309A27 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D2593B1B0138DF00309A27 /* GameViewController.swift */; };
@@ -37,6 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		624938BB1B03DD86000C898E /* PlayerIconScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerIconScene.swift; sourceTree = "<group>"; };
+		624938BD1B03E9D7000C898E /* earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earth.png; sourceTree = "<group>"; };
+		626ABD561B06BAAB00C55521 /* BlackHoleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackHoleScene.swift; sourceTree = "<group>"; };
+		626ABD581B06BBE800C55521 /* SunIconScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunIconScene.swift; sourceTree = "<group>"; };
+		626ABD5A1B06BE1700C55521 /* PlanetIconScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetIconScene.swift; sourceTree = "<group>"; };
+		626ABD5C1B06BF5000C55521 /* WormHoleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WormHoleScene.swift; sourceTree = "<group>"; };
+		626ABD5E1B06BFFA00C55521 /* AlienScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlienScene.swift; sourceTree = "<group>"; };
 		62D259301B0138DF00309A27 /* Gravity Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gravity Pong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D259341B0138DF00309A27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62D259351B0138DF00309A27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +113,7 @@
 		62D259321B0138DF00309A27 /* Gravity Pong */ = {
 			isa = PBXGroup;
 			children = (
+				624938BD1B03E9D7000C898E /* earth.png */,
 				62D259591B01395600309A27 /* FireflyParticle.sks */,
 				62DE08331B01A2EF00F8D4C4 /* alienParticles.sks */,
 				62D2595A1B01395600309A27 /* MagicParticle.sks */,
@@ -110,6 +125,12 @@
 				62D259601B01395600309A27 /* LaunchScreen.xib */,
 				62D259611B01395600309A27 /* GameOverScene.swift */,
 				62D259621B01395600309A27 /* StartGameScene.swift */,
+				624938BB1B03DD86000C898E /* PlayerIconScene.swift */,
+				626ABD561B06BAAB00C55521 /* BlackHoleScene.swift */,
+				626ABD581B06BBE800C55521 /* SunIconScene.swift */,
+				626ABD5A1B06BE1700C55521 /* PlanetIconScene.swift */,
+				626ABD5C1B06BF5000C55521 /* WormHoleScene.swift */,
+				626ABD5E1B06BFFA00C55521 /* AlienScene.swift */,
 				62D259351B0138DF00309A27 /* AppDelegate.swift */,
 				62D259391B0138DF00309A27 /* GameScene.swift */,
 				62D2593B1B0138DF00309A27 /* GameViewController.swift */,
@@ -234,6 +255,7 @@
 				62D259641B01395600309A27 /* MagicParticle.sks in Resources */,
 				62D2593F1B0138DF00309A27 /* Main.storyboard in Resources */,
 				62D259681B01395600309A27 /* SmokeParticle.sks in Resources */,
+				624938BE1B03E9D7000C898E /* earth.png in Resources */,
 				62DE08341B01A2EF00F8D4C4 /* alienParticles.sks in Resources */,
 				62D2596A1B01395600309A27 /* LaunchScreen.xib in Resources */,
 				62D259631B01395600309A27 /* FireflyParticle.sks in Resources */,
@@ -255,10 +277,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				62D2593A1B0138DF00309A27 /* GameScene.swift in Sources */,
+				626ABD5D1B06BF5000C55521 /* WormHoleScene.swift in Sources */,
+				626ABD5F1B06BFFA00C55521 /* AlienScene.swift in Sources */,
 				62D2593C1B0138DF00309A27 /* GameViewController.swift in Sources */,
+				626ABD591B06BBE800C55521 /* SunIconScene.swift in Sources */,
+				624938BC1B03DD86000C898E /* PlayerIconScene.swift in Sources */,
 				62D2596C1B01395600309A27 /* StartGameScene.swift in Sources */,
 				62D2596B1B01395600309A27 /* GameOverScene.swift in Sources */,
+				626ABD5B1B06BE1700C55521 /* PlanetIconScene.swift in Sources */,
 				62D259361B0138DF00309A27 /* AppDelegate.swift in Sources */,
+				626ABD571B06BAAB00C55521 /* BlackHoleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -163,7 +163,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         // RUNS ADD MOSNTER AND ADD PLANET FUNCTION FOREVER
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([
-                SKAction.waitForDuration(3.0),
+                SKAction.waitForDuration(5.0),
                 SKAction.runBlock(addAlien)
                 
                 ])
@@ -193,7 +193,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
                 SKAction.runBlock(addWormhole)
                 ])
             ))
-    }
+
+            }
     
     ////////////////////////
     // START OF FUNCTIONS //
@@ -453,7 +454,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         alien.position = CGPoint(x: self.size.width*0.55, y: actualY)
         
         // Add the monster to the scene
-        alien.removeFromParent()
         addChild(alien)
         // Determine speed of the monster
         let actualDuration = random(min: CGFloat(2.0), max: CGFloat(3.0))
@@ -622,7 +622,8 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             
             allowFullControls()
         }
-        if (alienCollectorCounter == 2){
+        if (alienCollectorCounter == 10 || alienCollectorCounter == 20 || alienCollectorCounter == 30 || alienCollectorCounter == 40 || alienCollectorCounter == 50 || alienCollectorCounter == 60 ||
+            alienCollectorCounter == 70 || alienCollectorCounter == 80 || alienCollectorCounter == 90){
             isStarPowerOn = true
             var starPowerLabel3 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
             var starPowerLabel4 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
@@ -643,9 +644,21 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             starPowerLabel4.runAction(fadeAction1)
         }
         
-        if (alienCollectorCounter == 3){
+        if (alienCollectorCounter == 99){
             explosion(self.player.position)
             player.removeFromParent()
+            gameOver = true
+            player.physicsBody?.dynamic = false
+            timer.invalidate()
+            runAction(SKAction.sequence([
+                SKAction.waitForDuration(5.0),
+                SKAction.runBlock() {
+                    let reveal = SKTransition.flipHorizontalWithDuration(0.5)
+                    let gameOverScene = GameOverScene(size: self.size, won: true, counter: self.counter)
+                    self.view?.presentScene(gameOverScene, transition: reveal)
+                }
+                ]))
+
             
         }
         
@@ -678,10 +691,30 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         swipeUp.direction = .Up
         view?.addGestureRecognizer(swipeUp)
         
-        
         let swipeDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipedDown:"))
         swipeDown.direction = .Down
         view?.addGestureRecognizer(swipeDown)
+        
+        let swipeDoubleUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipeDoubleUp:"))
+        swipeDoubleUp.numberOfTouchesRequired = 2
+        swipeDoubleUp.direction = .Up
+        view?.addGestureRecognizer(swipeDoubleUp)
+        
+        let swipeDoubleDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipeDoubleDown:"))
+        swipeDoubleDown.numberOfTouchesRequired = 2
+        swipeDoubleDown.direction = .Down
+        view?.addGestureRecognizer(swipeDoubleDown)
+        
+        let swipeDoubleLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipeDoubleLeft:"))
+        swipeDoubleLeft.numberOfTouchesRequired = 2
+        swipeDoubleLeft.direction = .Left
+        view?.addGestureRecognizer(swipeDoubleLeft)
+        
+        let swipeDoubleRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: Selector("swipeDoubleRight:"))
+        swipeDoubleRight.numberOfTouchesRequired = 2
+        swipeDoubleRight.direction = .Right
+        view?.addGestureRecognizer(swipeDoubleRight)
+        
         /////////////////////////////
         // END OF CONTROL GESTURES //
         ////////////////////////////
@@ -710,6 +743,30 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         println("swiped down")
         player.physicsBody?.velocity = CGVectorMake(0,0)
         player.physicsBody?.applyImpulse(CGVectorMake(0, -13))
+    }
+    
+    func swipeDoubleUp(sender:UISwipeGestureRecognizer){
+        println("swiped up twice")
+        player.physicsBody?.velocity = CGVectorMake(0,0)
+        player.physicsBody?.applyImpulse(CGVectorMake(0, 23))
+    }
+    
+    func swipeDoubleDown(sender:UISwipeGestureRecognizer){
+        println("swiped up down")
+        player.physicsBody?.velocity = CGVectorMake(0,0)
+        player.physicsBody?.applyImpulse(CGVectorMake(0, -23))
+    }
+    
+    func swipeDoubleLeft(sender:UISwipeGestureRecognizer){
+        println("swiped up left")
+        player.physicsBody?.velocity = CGVectorMake(0,0)
+        player.physicsBody?.applyImpulse(CGVectorMake(-23, 0))
+    }
+    
+    func swipeDoubleRight(sender:UISwipeGestureRecognizer){
+        println("swiped up right")
+        player.physicsBody?.velocity = CGVectorMake(0,0)
+        player.physicsBody?.applyImpulse(CGVectorMake(23, 0))
     }
     
     

@@ -9,31 +9,31 @@
 import Foundation
 import SpriteKit
 
-class StartGameScene: SKScene {
+class PlanetIconScene: SKScene {
     
     let label = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label1 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label2 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label3 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label4 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
-    let label5 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
-    let label6 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
-    let label7 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
-    let label8 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
-    
     
     func swipedRight(sender:UISwipeGestureRecognizer){
         println("swiped right")
-        
+        let scene = SunIconScene(size: size)
+        scene.scaleMode = .ResizeFill
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        let reveal = SKTransition.revealWithDirection(SKTransitionDirection.Right, duration: 0.3)
+        self.view?.presentScene(scene, transition: reveal)
     }
     
     func swipedLeft(sender:UISwipeGestureRecognizer){
         println("swiped left")
-        let scene = PlayerIconScene(size: size)
+        let scene = WormHoleScene(size: size)
         scene.scaleMode = .ResizeFill
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let reveal = SKTransition.revealWithDirection(SKTransitionDirection.Left, duration: 0.3)
         self.view?.presentScene(scene, transition: reveal)
+        
     }
     
     override func didMoveToView(view: SKView) {
@@ -78,79 +78,44 @@ class StartGameScene: SKScene {
         var snowEmitterNode = SKEmitterNode(fileNamed: "SnowParticles.sks")
         self.addChild(snowEmitterNode)
         
-        var imageView : UIImageView
-        imageView  = UIImageView(frame:CGRectMake(10, 50, 100, 300))
+        var message1 = "PLANETS"
+        var message2 = "Avoid these at all costs. "
+        var message3 = "If you hit one, you will be knocked around the universe. "
         
-        imageView.image = UIImage(named:"earth")
-        self.view?.addSubview(imageView)
-
-        var message = "Gravity Pong"
-        var message1 = "The objective: Tap the screen to propel Earth away from disaster. "
-        var message2 = "In order to stay alive, use the blackholes gravitational fields to keep balanced. "
-        var message3 = "If you hit a star you will explode. "
-        var message4 = "Planets will bump you out of your trajectory. "
-        var message5 = "If you hit a wormhole, you will experience vertigo. "
-        var message6 = "Get to close to a blackhole and you will spaghettify. "
-        var message7 = "Collect flying saucers for a secret bonus."
-        var message8 = "Swipe right to learn the pieces. Tap twice to start!"
+        let jupiter = SKSpriteNode(imageNamed: "jupiter")
+        jupiter.size = CGSize(width: 100, height: 100)
+        jupiter.position = CGPoint(x: -40, y: 90)
+        
+        let pluto = SKSpriteNode(imageNamed: "pluto")
+        pluto.size = CGSize(width: 100, height: 100)
+        pluto.position = CGPoint(x: 40, y: 90)
         
         
-        label.text = message
-        label.fontSize = 32
+        label.text = message1
+        label.fontSize = 26
         label.fontColor = SKColor.whiteColor()
-        label.position = CGPoint(x: 0, y: 100)
-        
-        label1.text = message1
-        label1.fontSize = 32
-        label1.fontColor = SKColor.greenColor()
-        label1.position = CGPoint(x: 0, y: 60)
+        label.position = CGPoint(x: 0, y: -0)
         
         label1.text = message2
         label1.fontSize = 16
         label1.fontColor = SKColor.whiteColor()
-        label1.position = CGPoint(x: 0, y: 40)
+        label1.position = CGPoint(x: 0, y: -20)
         
         label2.text = message3
         label2.fontSize = 16
         label2.fontColor = SKColor.whiteColor()
-        label2.position = CGPoint(x: 0, y: 20)
+        label2.position = CGPoint(x: 0, y: -40)
         
-        label3.text = message4
-        label3.fontSize = 16
-        label3.fontColor = SKColor.whiteColor()
-        label3.position = CGPoint(x: 0, y: 0)
-        
-        label4.text = message5
-        label4.fontSize = 16
-        label4.fontColor = SKColor.whiteColor()
-        label4.position = CGPoint(x: 0, y: -20)
-        
-        label5.text = message6
-        label5.fontSize = 16
-        label5.fontColor = SKColor.whiteColor()
-        label5.position = CGPoint(x: 0, y: -40)
-        
-        label6.text = message7
-        label6.fontSize = 16
-        label6.fontColor = SKColor.whiteColor()
-        label6.position = CGPoint(x: 0, y: -60)
-        
-        label7.text = message8
-        label7.fontSize = 16
-        label7.fontColor = SKColor.greenColor()
-        label7.position = CGPoint(x: 0, y: -80)
-        
+        addChild(jupiter)
+        addChild(pluto)
+
         addChild(label)
         addChild(label1)
         addChild(label2)
-        addChild(label3)
-        addChild(label4)
-        addChild(label5)
-        addChild(label6)
-        addChild(label7)
-        addChild(label8)
+        
         
     }
+    
     
     
     required init(coder aDecoder: NSCoder) {
