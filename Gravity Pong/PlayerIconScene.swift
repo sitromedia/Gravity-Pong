@@ -11,7 +11,7 @@ import SpriteKit
 
 class PlayerIconScene: SKScene {
     
-    let label = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
+    let label = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBlack ")
     let label1 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label2 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label3 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
@@ -79,8 +79,8 @@ class PlayerIconScene: SKScene {
         
         var message1 = "EARTH"
         var message2 = "Tap the screen to propel yourself up. "
-        var message3 = "Use blackholes to balance yourself in space. "
-        var message4 = "Watch out for space stuff. "
+        var message3 = "Capture 5 flying saucers for full control using swipe gestures. "
+        var message4 = "Use blackholes to balance yourself in space and watch out for space stuff. "
         
         let player = SKSpriteNode(imageNamed: "earth")
         player.size = CGSize(width: 100, height: 100)

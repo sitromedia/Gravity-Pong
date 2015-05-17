@@ -11,7 +11,7 @@ import SpriteKit
 
 class PlanetIconScene: SKScene {
     
-    let label = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
+    let label = SKLabelNode(fontNamed: "HelveticaNeue-CondensedBlack ")
     let label1 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label2 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label3 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")

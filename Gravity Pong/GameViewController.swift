@@ -15,8 +15,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         let scene = StartGameScene(size: view.bounds.size)
         let skView = view as! SKView
-        skView.showsFPS = true
-        skView.showsNodeCount = true
+        skView.showsFPS = false
+        skView.showsNodeCount = false
         skView.ignoresSiblingOrder = true
         scene.scaleMode = .ResizeFill
         scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)

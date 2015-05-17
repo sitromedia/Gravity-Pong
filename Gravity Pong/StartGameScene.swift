@@ -20,7 +20,7 @@ class StartGameScene: SKScene {
     let label6 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label7 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     let label8 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
-    
+
     
     func swipedRight(sender:UISwipeGestureRecognizer){
         println("swiped right")
@@ -84,9 +84,9 @@ class StartGameScene: SKScene {
         imageView.image = UIImage(named:"earth")
         self.view?.addSubview(imageView)
 
-        var message = "Gravity Pong"
-        var message1 = "The objective: Tap the screen to propel Earth away from disaster. "
-        var message2 = "In order to stay alive, use the blackholes gravitational fields to keep balanced. "
+        var message = "The Gravity Pong"
+        var message1 = "Tap the screen to propel Earth away from disaster. "
+        var message2 = "Use the blackholes gravitational fields to keep balanced. "
         var message3 = "If you hit a star you will explode. "
         var message4 = "Planets will bump you out of your trajectory. "
         var message5 = "If you hit a wormhole, you will experience vertigo. "
@@ -96,13 +96,13 @@ class StartGameScene: SKScene {
         
         
         label.text = message
-        label.fontSize = 32
+        label.fontSize = 40
         label.fontColor = SKColor.whiteColor()
-        label.position = CGPoint(x: 0, y: 100)
+        label.position = CGPoint(x: 0, y: 80)
         
         label1.text = message1
-        label1.fontSize = 32
-        label1.fontColor = SKColor.greenColor()
+        label1.fontSize = 16
+        label1.fontColor = SKColor.whiteColor()
         label1.position = CGPoint(x: 0, y: 60)
         
         label1.text = message2
@@ -134,11 +134,11 @@ class StartGameScene: SKScene {
         label6.fontSize = 16
         label6.fontColor = SKColor.whiteColor()
         label6.position = CGPoint(x: 0, y: -60)
-        
+
         label7.text = message8
-        label7.fontSize = 16
+        label7.fontSize = 18
         label7.fontColor = SKColor.greenColor()
-        label7.position = CGPoint(x: 0, y: -80)
+        label7.position = CGPoint(x: 0, y: -100)
         
         addChild(label)
         addChild(label1)
@@ -149,6 +149,7 @@ class StartGameScene: SKScene {
         addChild(label6)
         addChild(label7)
         addChild(label8)
+
         
     }
     

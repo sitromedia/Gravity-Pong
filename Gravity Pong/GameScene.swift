@@ -72,6 +72,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     var alienCounterLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     var fullControlLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     var fullControlLabel1 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
+    var fullControlLabel2 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
     var isControlNormal = true
     var isGravityNormal = true
     var isStarPowerOn = false
@@ -295,7 +296,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
     func addAlienCounterLabel(){
         alienCounterLabel.fontSize = 18
         alienCounterLabel.fontColor = SKColor.whiteColor()
-        alienCounterLabel.position = CGPoint(x: -self.size.width*0.35, y: -self.size.height*0.45)
+        alienCounterLabel.position = CGPoint(x: -self.size.width*0.32, y: -self.size.height*0.45)
         alienCounterLabel.text = String("Saucers Collected: \(alienCollectorCounter)")
         addChild(alienCounterLabel)
     }
@@ -602,8 +603,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         alienCollectorCounter++
         alienCounterLabel.text = String("Saucers Collected: \(alienCollectorCounter)")
         
-        if (alienCollectorCounter == 1){
+        if (alienCollectorCounter == 5){
             isFullControlEnabled = true
+            counter = counter * 2
             fullControlLabel.fontSize = 20
             fullControlLabel.fontColor = SKColor.whiteColor()
             fullControlLabel.position = CGPoint(x: 0, y: 0)
@@ -620,11 +622,20 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
             let fadeAction1 = SKAction.fadeAlphaTo(0, duration: 4.0)
             fullControlLabel1.runAction(fadeAction1)
             
+            fullControlLabel2.fontSize = 20
+            fullControlLabel2.fontColor = SKColor.whiteColor()
+            fullControlLabel2.position = CGPoint(x: 0, y: -40)
+            fullControlLabel2.text = "Swipe with 2 fingers and double the propulsion. "
+            addChild(fullControlLabel2)
+            let fadeAction2 = SKAction.fadeAlphaTo(0, duration: 4.0)
+            fullControlLabel2.runAction(fadeAction2)
+            
             allowFullControls()
         }
         if (alienCollectorCounter == 10 || alienCollectorCounter == 20 || alienCollectorCounter == 30 || alienCollectorCounter == 40 || alienCollectorCounter == 50 || alienCollectorCounter == 60 ||
             alienCollectorCounter == 70 || alienCollectorCounter == 80 || alienCollectorCounter == 90){
             isStarPowerOn = true
+            counter = counter * 3
             var starPowerLabel3 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
             var starPowerLabel4 = SKLabelNode(fontNamed: "AppleSDGothicNeo-SemiBold")
             starPowerLabel3.text = "You have recieved the ability to travel at quantum speeds. You may pass through all bodies."
@@ -645,6 +656,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate {
         }
         
         if (alienCollectorCounter == 99){
+            counter = counter * 7
             explosion(self.player.position)
             player.removeFromParent()
             gameOver = true
